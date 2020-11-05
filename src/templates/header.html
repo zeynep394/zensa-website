@@ -1,0 +1,55 @@
+{% load static %}
+<section class="header">
+    <!--  <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+        </label>-->
+    <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+    </div>
+    <nav class="navbar ">
+        <a class="navbar-brand" href="/"><img src="{% static 'img/zensason.png' %}"></a>
+    </nav>
+    <div class="list">
+        <ul class="navbar-nav">
+            <li>
+                <a href="/">Anasayfa</a>
+            </li>
+            <li>
+                <a href="/products">Akıl Oyunları </a>
+            </li>
+            <li>
+                <a href="/ahsap">Ahşap Obje </a>
+            </li>
+            <li>
+                <a href="/boyalar">Boyalar </a>
+            </li>
+            <li>
+                <a href="#">Hakkımızda</a>
+            </li>
+
+
+
+
+        </ul>
+    </div>
+    <!--<form action="{% url 'search' %}" class="search-form"> 
+    <div class="search-box">
+        <input class="search-txt" type="text" name="q"  placeholder="Type to search  " />
+        <a class="search-btn">
+            <i class="fas fa-search"></i>
+        </a>
+    </div>
+    </form>-->
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <form action="{% url 'search' %}">
+        <input type="search" name="q"  placeholder="Type to search  " >
+        <i class="fa fa-search"></i>
+    </form>
+
+</section>

@@ -1,0 +1,1012 @@
+*{
+    padding:0;
+    margin:0;
+   /* background color: #f7f7f7;
+    /*list-style:none;
+    text-decoration:none;
+    box-sizing: border-box;*/
+}
+
+@media secreen and (max-width: 1060px){
+    #primary{width:67%;}
+    #secondary{width:30%; margin-left:3%;}
+
+}
+@media screen and (max-width: 768px) {
+    #primary { width:100%; }
+    #secondary { width:100%; margin:0; border:none; }
+}
+
+
+body{
+    font-family:montserrat;
+    
+
+}
+
+/*#nav-bar{
+    position: sticky;
+    top: 0;
+    z-index: 10;
+
+}*/
+.header{
+    background-image: linear-gradient(to right,/*#E2F0CB*/ #C7CEEA,#B5EAD7,#C7CEEA/*,#e3e3e3 ,#f992a6*/);
+    padding: 0 !important;
+    height: 8em;
+    margin-bottom:80px; 
+  
+   
+}
+.header .navbar-nav{ /*ul kısmı*/
+    list-style: none;
+    padding: 0;
+    display: flex; /* flex koyunca alt alta dizili olan liste elemanları yanyana dizili hale geliyor ama bitişik oluyorlar*/
+    justify-content: center;
+    
+}
+
+.navbar{/*img in içinde bulunduğu nav ona yukarıdan 30px bıraktırdık */
+    padding: 1em; 
+
+}
+
+.navbar-brand img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+   
+   
+    height: 3.5em;
+   
+    /*there is smt wrong here
+    /*position: absolute;*/
+}
+.navbar-nav li{
+    margin:0 1em;
+}
+.navbar-nav a{
+    font-family: 'MedievalSharp';
+    color: #fff;
+    text-decoration: none;/*link kısmını siliyor*/
+
+}
+
+.navbar-nav a:hover,
+.navbar-nav a:focus{
+    color: #ffde4d ;
+    transform: scales(1.1);
+
+
+}
+.burger{
+    float: right;
+    margin-top: 3em;
+    margin-right: 0.8em;
+    
+    cursor: pointer;
+    display: none;
+    
+    
+}
+.burger div{
+    width: 1.5em;
+    height: .2em;
+    margin: 5px;
+    background-color: #fff;
+
+}
+
+/*.burger{
+    display: none;
+}*/
+
+/*@media screen and (max-width:1024px){
+    body{
+        overflow: hidden;
+    }
+    }
+    .navbar-nav{
+        width: 60%;
+    }*/
+
+
+@media screen and (max-width: 768px){
+    body,html{
+        overflow-x: hidden;
+    }
+
+   .navbar{
+       padding: 2em;
+      /* position: relative;
+       z-index: 1;*/
+   } 
+   .navbar-nav{/* ul kısmı  header.navbar dediğinde algılamıyordu sebebi ne??????? */
+       
+    
+    height: 12em;
+    background-color: #E1F7EF;
+    left: -100%;
+    display: flex;/*block halindeydi*/
+    flex-direction: column;/*yoktu*/
+    align-items: center;/*text-align centerdı*/
+    width: 100%;
+    transform: translateX(100%);
+    transition: transform 0.4s ease-in;
+}
+
+   .navbar-nav li{
+        margin: 5px 0;
+        line-height: 30px;
+        opacity: 0;/*animation yapmak için*/
+
+
+
+   }
+   .header ul li a{
+       font-family: 'MedievalSharp';
+       font-size: .8em;
+       color: #000000;
+
+   }
+   .burger{
+    display: block;
+   }
+
+
+    
+}
+
+   /*#check :checked~ ul{
+       left: 0;
+   }*/
+
+.nav-active{
+    transform:translateX(0%);
+}
+
+@keyframes navLinkFade{
+    from{
+        opacity: 0;
+        transform: translateX(2em);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px,-5px);
+}
+.toggle .line2{
+    opacity: 0;
+}
+.toggle .line3{
+    transform: rotate(45deg) translate(-15px,-7px);
+}
+/*.navbar-toggler{
+    border: none;
+    outline: none;
+}
+
+
+
+
+/*.navbar-toggler{
+    border: none;
+    outline: none;
+    padding: 0;
+    margin-top: 30px;
+}
+.navbar-toggler.fa{
+    font-size:30px;
+    cursor: pointer;
+}
+*/
+.banner-img{
+    margin:8% 20%/*100px 305px*/;
+
+    width: 100%;
+}
+.banner-img img{
+    margin-top: 3.5%/*50px*/;
+    width: 38%;
+    max-width: 600px;
+   /* margin-bottom: -80px;*/
+
+}
+.banner{
+    margin-left:5% ;
+    margin-bottom:10%/*80px*/; 
+    position: relative;
+    background-image: linear-gradient(to left,#DAF5EB,#E1F7EF,#E9F9F3,#F0FBF7,#F8FDFB);
+    /*margin-left: 60px;
+    margin-right:60px;*/
+    width: 90%;
+    /*600px*/
+    height: 600px;
+
+    
+}
+
+.banner-content{
+    position: absolute;
+    left: 50%;
+    top: 15%;
+    background: /*#F0F0F0*/#F3FCF1;
+    width: 50%/*450px*/;/*o yüzden bunu küçük ekranlara göre ayarlayacağız*/
+    max-width: 450px;/*responsive designı sağlamak için büyük ekranlarda işe yarıyor*/
+    height: 70%/*400px*/;
+}
+
+
+.banner .banner-content h1{
+    font-family: 'Fontdiner Swanky';
+    font-size: 40px;
+    text-align: center;
+    padding-top: 50px;
+    color:/* #96ceb4 */#D0F3C9;
+    background-color:#F3FCF1/*#F0F0F0*/; 
+}
+
+.banner-content p{
+    font-family: 'Roboto Slab';
+    color:#909090;
+    font-size: 15px;
+    text-align:left;
+    padding-left: 50px;
+    padding-top: 50px;
+    
+    
+}
+
+@media screen and (max-width: 768px){
+    .banner{
+        top: -100px;
+        background: #fff;
+        padding: 0;
+    }
+    .banner-img{
+        margin:300px 0/*100px 305px*/;
+        
+        width: 100%;
+    }
+
+    .banner-img img{
+        
+        width: 100%;
+        
+       /* margin-bottom: -80px;*/
+    
+    }
+    .banner-content{
+        position: absolute;
+        background-color:#F3FCF1;
+        left: 0;
+        top: 70%;
+        /*background: /*#F0F0F0#F3FCF1;*/
+        width: 100%/*450px*/;/*o yüzden bunu küçük ekranlara göre ayarlayacağız*/
+        height: 50%;
+
+       /*responsive designı sağlamak için büyük ekranlarda işe yarıyor*/
+       /*400px*/;
+    }
+    
+    
+    .banner .banner-content h1{
+        font-size: 1.5rem;
+        text-align: center;
+        padding-top: 5%;
+        color: #96ceb4;
+        background-color:#F3FCF1/*#F0F0F0*/; 
+    }
+    
+    .banner-content p{
+        color:#909090;
+        font-size: 1rem;
+        text-align:left;
+        
+        padding-top: 5%;
+        
+        
+    }
+}
+/*--------------------------------------------------KAYAN YERİN CSSI-------------------------------------------------------------------*/
+.full-kayan{
+    position: relative;
+    
+}
+/*.parallax-window {
+    min-height: 80%;
+    background: transparent;
+}*/
+
+.full-content{ 
+    
+    background-image: url(shutterstock_365074298_photos_v2_x4.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+   /*hatırlamıyorum nasıl ayarlandığını */
+    
+}
+
+
+.full-kayan .full-content .text{
+    font-size:4em /*55px*/;
+    color: #fff;
+    padding-top: 10%/*200px*/;
+    margin: 8% 8%/*180px 180px*/;
+    
+}
+.full-kayan .full-content .text2{
+    
+    font-size: 2.5em;
+    color: #fff;
+    
+    margin:2% 8%;
+}
+.full-content .buton{
+    display: inline-block;
+    background:#fff ;
+    color: #000000;
+    padding: .5em 1.25em;
+    text-align: center;
+    
+   /* left: 50px;
+    bottom: 150px;*/
+    margin:5% 8%/*80px*/;
+  /*  margin-bottom: 50px;*/
+}
+
+.full-content .buton:hover{
+    background-image: linear-gradient(to right,#E2F0CB,#FFDAC1,#FFB7B2);
+}
+.full-content .buton a{
+    text-decoration: none;
+    color: #000000;
+}
+
+
+@media screen and (max-width: 768px){
+
+    .full-content{
+        
+        height: 600px;
+    }
+      
+    .full-kayan .full-content .text{
+        font-size:3em /*55px*/;
+        color: #fff;
+        padding-top: 10%/*200px*/;
+        margin: 15% 8%/*180px 180px*/;
+        
+    }
+    .full-kayan .full-content .text2{
+        
+        font-size: 1.5em;
+        color: #fff;
+        
+        margin:2% 8%;
+    }
+    .full-content .buton{
+        display: inline-block;
+        background:#fff ;
+        color: #000000;
+        padding: .5em 1.25em;
+        text-align: center;
+        text-decoration:none ;
+       /* left: 50px;
+        bottom: 150px;*/
+        margin:5% 8%/*80px*/;
+      /*  margin-bottom: 50px;*/
+    }
+    
+
+}
+
+/*-----------------------ÇOK SATANLAR------------------------------*/
+/*.çok-satanlar{
+    padding: 100px 0;
+
+
+}
+
+.ürün-box{
+    margin: 80px 0;
+}
+.title-style h1{
+    padding: 40px 0;
+
+}
+.title-style{
+    margin: 0 auto 80px;
+    height: 120px;
+    width: 80%;
+    max-width: 700px;
+    background: #fff;
+    position: relative;
+    box-shadow: 0 4px 5px 0 rgba(0,0,50,0.5);
+    
+}
+.title-style::after{
+    content:'' ;
+    height: 100px;
+    width: 200px;
+    background-color: #f992a6;
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    z-index: -1;
+}
+.title-style::before{
+    content:'' ;
+    height: 100px;
+    width: 200px;
+    background-color: #f992a6;
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    z-index: -1;
+}*/
+
+.post-slider{
+    position: relative;
+    margin-top: 80px;
+    
+}
+.post-wrapper{
+    
+    overflow: hidden;
+    width: 80%;
+    height: 80%/*350px*/;
+    margin: 0px auto;
+    
+    
+}
+.post-slider .next{
+    position: absolute;
+    bottom: 43% ;
+    right: 5%/*90px*/;
+    font-size: 30px;
+    color: #f992a6;
+    cursor: pointer;
+}
+.post-slider .prev{
+    position: absolute;
+    bottom: 45%;
+    left: 5%;
+    font-size: 30px;
+    color: #f992a6;
+    cursor: pointer;
+    
+}
+
+.post-wrapper .post{
+    width: 40%/*200px*/;
+    height: 80%;
+    margin: 0px 10px;
+    display: inline-block;
+    background: #fff;
+
+}
+.post-slider .slider-title{
+    color:#000000; 
+    padding-left: 10px;
+    text-align: center;
+    margin-top: 150px;
+    /*font:  small-caps bold 16px/2 cursive;*/
+    font-family: 'MedievalSharp';
+    font-weight: 400;
+    font-size: 2.5em; 
+    /*margin-left: 80px;
+    margin-bottom: 30px;**/
+    text-align: center;
+    
+    
+   /* background-image: linear-gradient(to right,#E2F0CB,#FFDAC1,#FFB7B2);
+
+    width: 85%;
+    height: 60px;*/
+
+}
+
+.post-wrapper .post .slider-img{
+    width: 100%;
+}
+
+
+.post-wrapper .post .post-info h4 a{
+color: #7a7c7f; 
+font: 1.2em "Fira Sans", serif; 
+font-size: 16px; 
+line-height: 28px; 
+margin: 5px 0 48px;
+text-decoration: none
+
+}
+
+.post:hover  
+{
+	transform: scale(1.2);
+}
+.post.details
+{
+	position: absolute;
+	background: rgba(0,0,0,.8);
+	transform: scale(0);
+	transition: transform .6s;
+
+}
+.post:hover .details
+{
+    transform: scaleY(0.2);
+}
+
+.post .details .content p
+{
+	margin: 10px 0 0;
+	padding: 0;
+	font-size:20px ; 
+	color: #FFE4C4;
+
+}
+
+/*.post-wrapper .post .details:hover{
+    transform: scale(1.1);
+}
+.post-wrapper .post .details{/*BUNLARA BAK ÇALIŞMIYORLAR DÜZELT KÜÇÜK KUTULAR HOVER YAPINA ÇIKSIN GÖZ AT YAZSIN
+    position: absolute;
+    width: 10%;
+	background: rgba(0,0,0,.8);
+	transform: scale(0);
+	transition: transform .6s;
+}*/
+
+.post-wrapper .post .post-info p{
+    color: #7a7c7f; 
+    font: 1.2em "Fira Sans", serif;
+    font-size: 16px; 
+
+}
+.post-wrapper .post.post-info hr{
+     color:  #000000;
+
+}
+
+@media screen and (max-width: 768px){
+    .post-wrapper{
+    
+        overflow: hidden;
+        width: 250%;
+        height: 80%/*350px*/;
+        margin: 0px auto;
+        
+        
+    }
+    .post-slider .next{
+        display: inline;
+        position: absolute;
+        bottom: -40px ;
+        right:200px;
+        font-size: 30px;
+        color: #f992a6;
+        cursor: pointer;
+    }
+    .post-slider .prev{
+        position: absolute;
+        bottom: -40px;
+        left: 200px;
+        font-size: 30px;
+        color: #f992a6;
+        cursor: pointer;
+        
+    }
+}
+
+
+/*-----------------------------------İKİNCİSİ İÇİN----------------------------------------------*/
+.post2-slider{
+    position: relative;
+    margin-bottom: 50px;
+    
+}
+.post2-wrapper{
+    overflow: hidden;
+    width: 80%;
+    height: 350px;
+    margin: 0px auto;
+ 
+}
+
+.post2-wrapper .post2{
+    width: 40%;
+    height: 80%;
+    margin: 0px 10px;
+    display: inline-block;
+    background: #fff;
+
+}
+.post2-slider .nexter{
+    position: absolute;
+    bottom: 10% ;
+    right:5%;
+    font-size: 30px;
+    color: #f992a6;
+    cursor: pointer;
+}
+.post2-slider .previous{
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+    font-size: 30px;
+    color: #f992a6;
+    cursor: pointer;
+    
+}
+.post2-slider .slider2-title{
+    color:#000000; 
+    padding-left: 10px;
+    text-align: center;
+    margin-top: 150px;
+    /*font:  small-caps bold 16px/2 cursive;*/
+    font-family: 'MedievalSharp';
+    font-weight: 400;
+    font-size: 2.5em; 
+    /*margin-left: 80px;
+    margin-bottom: 30px;**/
+    text-align: center;
+
+
+}
+/*
+nav{
+    background:#FFE4C4;
+    height:80px;
+    width:%100;
+
+}
+label.logo{
+    color: #778899;
+    font-size: 35px;
+    line-height: 80px;
+    padding: 0 90px;
+    font-weight:bold;
+}
+nav ul{
+    float: right;
+    margin-right: 30px;
+}/*
+nav ul li{
+    display:inline-block;
+    line-height:80px;
+    margin:0 10px;
+}*/
+.post2-wrapper .post2 img{
+    width: 100%;
+}
+
+
+.post2-wrapper .post2 .post-info h4 a{
+color: #7a7c7f; 
+font: 1.2em "Fira Sans", serif; 
+font-size: 16px; 
+line-height: 28px; 
+margin: 5px 0 48px;
+text-decoration: none
+
+}
+
+.post2:hover  
+{
+	transform: scale(1.2);
+}
+.post2.details
+{
+	position: absolute;
+	background: rgba(0,0,0,.8);
+	transform: scale(0);
+	transition: transform .6s;
+
+}
+.post2:hover .details
+{
+    transform: scaleY(0.2);
+}
+
+.post2 .details .content p
+{
+	margin: 10px 0 0;
+	padding: 0;
+	font-size:20px ; 
+	color: #FFE4C4;
+
+}
+
+/*.post-wrapper .post .details:hover{
+    transform: scale(1.1);
+}
+.post-wrapper .post .details{/*BUNLARA BAK ÇALIŞMIYORLAR DÜZELT KÜÇÜK KUTULAR HOVER YAPINA ÇIKSIN GÖZ AT YAZSIN
+    position: absolute;
+    width: 10%;
+	background: rgba(0,0,0,.8);
+	transform: scale(0);
+	transition: transform .6s;
+}*/
+
+.post2-wrapper .post2 .post-info p{
+    color: #7a7c7f; 
+    font: 1.2em "Fira Sans", serif;
+    font-size: 16px; 
+
+}
+.post2-wrapper .post2 .post-info hr{
+     color:  #000000;
+
+}
+
+@media screen and (max-width: 768px){
+    .post2-wrapper{
+    
+        overflow: hidden;
+        width: 250%;
+        height: 80%/*350px*/;
+        margin: 0px auto;
+        
+        
+    }
+    .post2-slider .nexter{
+        display: inline;
+        position: absolute;
+        bottom: -40px ;
+        right:200px;
+        font-size: 30px;
+        color: #f992a6;
+        cursor: pointer;
+    }
+    .post2-slider .previous{
+        position: absolute;
+        bottom: -40px;
+        left: 200px;
+        font-size: 30px;
+        color: #f992a6;
+        cursor: pointer;
+        
+    }
+}
+div ul li a{
+    text-transform:uppercase;
+    color: #96ceb4;
+    font:  small-caps bold 16px/2 system-ui;
+    /*color:#0b0b0b;*/
+}
+
+
+nav ul li a:hover{
+    color: linear-gradient(to right,#96ceb4 ,#ffeead);
+    transition: 2s;
+
+}/*
+img{
+    margin:10px;
+}*/
+
+/*-------------------------------AHŞAP İÇİN SLIDER-------------------------------*/
+
+
+/*.swiper-container{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+
+}
+.slide-images{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 500%;
+    height: 100%;
+    animation: animate 10s linear infinite;
+}
+.img-container{
+    width: 20%;
+    height: 100%;
+    float: left;
+}
+
+@keyframes animate{
+    0% {left:0;}
+     
+    20% {left: 0;}
+    25% {left: -100%;}
+    45% {left: -100%;}
+    50% {left: -200%;}
+    70% {left: -200%;}
+    75% {left: -300%;}
+    95% {left: -300%;}
+    
+    100% {left: -400%;}
+}
+*/
+
+slider{
+    overflow: hidden;
+    width: 80%;
+    height: 200px;
+    margin: 0px auto;
+ 
+}
+
+slider slide{
+    width: 40%;
+    height: 50%;
+    margin: 0px 10px;
+    display: inline-block;
+    background: #fff;
+
+}
+slider .nexter{
+    position: absolute;
+    bottom: 10% ;
+    right:5%;
+    font-size: 30px;
+    color: #f992a6;
+    cursor: pointer;
+}
+slider .previous{
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+    font-size: 30px;
+    color: #f992a6;
+    cursor: pointer;
+    
+}
+
+
+slider slide img{
+    width: 40%;
+}
+ /*slider > * {
+    position: absolute;
+    display:block ;
+    width: 100%;
+    height: 100%;
+    background: #1f1f1f;
+    animation: slide 12s infinite;
+    overflow: hidden;
+   
+}
+
+slide:nth-child(1){
+    left: 0%;
+    animation-delay: -1s;
+    background-image: url(img5.jpg);
+    background-size: cover;
+    background-position: center;
+}
+slide:nth-child(2){
+    left: 100%; 
+    animation-delay: 2s;
+    background-image: url(shutterstock_365074298_photos_v2_x4.jpg);
+    background-size: cover;
+    background-position: center;
+}
+slide:nth-child(3){
+    left: 100%;
+    animation-delay: 5s;
+    background-image: url(zensaa.png);
+    background-size: cover;
+    background-position: center;
+}
+slide p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 70px;
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    margin-top: 340px;
+    color: #000000;
+}
+
+@keyframes slide{
+    0% {left:0; width: 100%;}
+     
+    5% {left: 0;}
+    25% {left: -200%;}
+
+    30% {left: -100%; width: 100%;}
+    30.0001% {left: -100%; width: 0%;}
+    100% {left: 100%; width: 0%;}
+}
+/* -------------------------------------------------------------------FOOTER--------------------------------------------------------------------*/
+
+.containerf{
+    margin-left: 5%/*80px*/;
+    margin-top: 200px;
+    width:90%;
+    height: 800px;
+    background-image: linear-gradient(to top ,#B5EAD7,#C7CEEA,#FFB7B2);
+}
+.containerf p{
+    width:100%/*"1370" */;
+    height:40%/*450*/;
+}
+.containerf h2{
+    color:#ffeead;
+    font:  small-caps bold 16px/2 cursive; 
+    font-size: 20px;
+    margin-left: 100px;
+   
+
+}
+.containerf .info p{
+    color:#ffeead;
+    font:  small-caps bold 16px/2 cursive; 
+    font-size: 10px;
+    margin-left: 100px;
+}
+.footer-bottom{
+   text-align: center;
+   color:#fff;
+   font: system-ui; 
+   font-size: 15px ;
+   background:#96ceb4 ;
+}
+/*---------------------------marvel temal
+.containerd{
+    width: 100%;
+    height: 100vh;
+    background-color: #a4152c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box{
+    width: 300px;
+    height: 600px;
+    background-color: #1e1e26;
+    border-radius: 10px;
+    box-shadow: 2px 10px 12px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    margin: 20px 10px;
+
+}
+.box img{
+    height: 100px;
+    background-color: #000000;
+    max-width: 100px;
+    max-height: 100px;
+}
+
+
+.containerd{
+    position: relative;
+    margin-bottom: 50px;
+    
+}
+#responsive{
+    overflow: hidden;
+    width: 70%;
+    height: 350px;
+    margin: 0px auto;
+ 
+}
+
+.box{
+    width: 200px;
+    height: 400px;
+    margin: 0px 10px;
+    display: inline-block;
+    background: #e3e3e3;
+
+}*/
+

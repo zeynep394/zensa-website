@@ -1,0 +1,153 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+
+<script src="{% static 'js/app.js' %}"></script>
+
+<div class="slick-container">
+  <p>{{post.title}}</p>
+  <!--<i class="fa fa-chevron-left prevpost"></i>
+  <i class="fa fa-chevron-right nextpost"></i>-->
+  <div class="slider-for">
+    
+    <img src="{{post.deneme_resim.url}}">
+    <img src="{{post.deneme_resim2.url}}">
+    <img src="{{post.deneme_resim3.url}}">
+    <!--<img src="{{obj1.img4.url}}">
+    <img src="{{obj1.img5.url}}">
+    <img src="{{obj1.img6.url}}">-->
+     
+
+  </div>
+  <div class="slider-nav">
+    <img src="{{post.deneme_resim.url}}">
+    <img src="{{post.deneme_resim2.url}}">
+    <img src="{{post.deneme_resim3.url}}">
+    <!--<img src="{% static 'img/img4.jpg' %}">
+    <img src="{% static 'img/img5.jpg' %}">
+    <img src="{% static 'img/img6.jpg' %}">-->
+
+
+  </div>
+</div>
+
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="{% static 'slick/slick.min.js' %}"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<script type="text/javascript">
+     $('.slider-for').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: false,
+      //nextArrow: $('.nextpost'),
+      //prevArrow: $('.prevpost'),
+      fade: true,
+      asNavFor: '.slider-nav'
+    });
+    $('.slider-nav').slick({
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      asNavFor: '.slider-for',
+      dots: true,
+      centerMode: true,
+
+      focusOnSelect: true
+    });
+  /*$('.slider-for').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true,
+    fade: true,
+    asNavFor: '.slider-nav'
+  });
+  $('.slider-nav').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    asNavFor: '.slider-for',
+    dots: true,
+    centerMode: true,
+    /*nextArrow: $('.next'),
+    prevArrow: $('.prev'), okları şekillendirmek için bunları koymuştum ama çalışmadı
+    focusOnSelect: true
+  });*/
+
+</script>
+<!--<main class="post blog-post col-lg-8">-->
+  <div class="containerr">
+    <div class="post-single">
+      
+      <div class="post-details">
+
+
+        <div class="post-body">
+          {{ post.content | safe }}
+          <!--her postun kendi içeriği var biz mesela 20 tane post oluşturucaz 
+              o tüm postlar için post sayfaları yapacak ama çok satanlar kısmında küçük bir bölümü gözükecek
+            yani 1 postun hem overview kısmı hem de content kısmı olacak html kodlarında hangisini yazdıysak o gözükecek
+          mesela blog un içinde overview gözükecek şekilde ayarladık burada content kullandık. BUnu biz html ile ayarlıyoruz-->
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="{% static 'slick/slick.min.js' %}"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.post-wrapper').slick({
+            slidesToShow: 5,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            nextArrow: $('.next'),
+            prevArrow: $('.prev'),
+        });
+
+      });
+
+</script>
+
+  <div class="page-wrapper">
+    <div class="post-slider">
+        <h1 class="slider-title">Benzerleri</h1>
+
+        <i class="fa fa-chevron-left prev"></i>
+        <i class="fa fa-chevron-right next"></i>
+        <div class="post-wrapper">
+            
+            {%for boya in object_list_boya%}
+            <div class="post">
+                <a href="{{ boya.get_absolute_url }}"><img src="{{boya.thumbnail.url}}" class="slider-img"></a>
+                <div class="details">
+                    <p>GÖZ AT</p>
+                </div>
+                <div class="post-info">
+                    <h4><a href="{{ boya.get_absolute_url }}">{{boya.title}}</a></h4>
+                    <hr>
+                    <pre><p><del>{{boya.f_price}} ₺</del>     {{boya.l_price}} ₺</p></pre>
+
+                </div>
+
+            </div>
+            {% endfor %}
+            
+
+        </div>
+    </div>
+
+</div>
+  
+
+
+
+
+
+{% endblock content %}

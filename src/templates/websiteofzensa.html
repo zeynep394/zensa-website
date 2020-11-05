@@ -1,0 +1,234 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+
+
+<script src="{% static 'js/app.js' %}"></script>
+
+
+
+<div class="banner">
+    <div class="banner-img">
+        <img src="{% static 'img/images.jpg' %}">
+
+    </div>
+
+    <div class="banner-content">
+        <h1>AKIL OYUNLARI</h1>
+        <p>Çocuklarda dikkat ve odaklanmayı artırır.<br>El göz koordinasyonunu geliştirir.<br>Şekil zemin algısını
+            destekler.<br>Zekayı geliştirir.<br>Hiperaktiviteye iyi gelir.<br>Disleksi, atipikotizm ve hafif mental
+            retardasyon durumlarında kullanılır.</p>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+<!-------------------- ÇOK SATANLAR------------------------>
+<div class="page-wrapper">
+    <div class="post-slider">
+        <h1 class="slider-title">Çok Satanlar</h1>
+
+        <i class="fa fa-chevron-left prev"></i>
+        <i class="fa fa-chevron-right next"></i>
+        <div class="post-wrapper">
+            
+            {% for obj in object_list %}
+            <div class="post">
+                <a href="{{ obj.get_absolute_url }}"><img src="{{obj.thumbnail.url}}" class="slider-img"></a>
+                <div class="details">
+                    <p>GÖZ AT</p>
+                </div>
+                <div class="post-info">
+                    <h4><a href="{{ obj.get_absolute_url }}">{{obj.title}}</a></h4>
+                    <hr>
+                    <pre><p><del>{{obj.f_price}} ₺</del>     {{obj.l_price}} ₺</p></pre>
+
+                </div>
+
+            </div>
+            {% endfor %}
+            
+
+        </div>
+    </div>
+
+</div>
+
+<!--KAYAN RESİM VE SHOP NOW BUTTONU-->
+<div class="full-kayan">
+    <div class="full-content">
+
+
+        <p class="text"><b>Çocuğun En <br> Önemli İşi <br> Oyundur.</p>
+        <p class="text2">Bu Oyunları Kaçırmayın!</p>
+        <p class="buton">
+            <a class="buton-content" href="products.html"> Şimdi Al</a>
+        </p>
+
+
+
+    </div>
+</div>
+
+
+<!--EN YENİLER-->
+
+<div class="page2-wrapper">
+    <div class="post2-slider">
+        <h1 class="slider2-title">En Yeniler</h1>
+        <i class="fa fa-chevron-left previous"></i>
+        <i class="fa fa-chevron-right nexter"></i>
+        <div class="post2-wrapper">
+            
+            {%for obje in object_list2%}
+            <div class="post2">
+                <a href="{{ obje.get_absolute_url }}"><img src="{{obje.thumbnail.url}}" class="slider-img"></a>
+                <div class="details">
+                    <p>GÖZ AT</p>
+                </div>
+                <div class="post-info">
+                    <h4><a href="{{ obje.get_absolute_url }}">{{obje.title}}</a></h4>
+                    <hr>
+                    <pre><p><del>{{obje.f_price}} ₺</del>     {{obje.l_price}} ₺</p></pre>
+
+                </div>
+
+            </div>
+            {% endfor %}
+            
+
+        </div>
+    </div>
+
+</div>
+
+
+
+<div id="slideriki">
+    <figure>
+        <img src="{% static 'img/img.jpg'%}">
+        <img src="{% static 'img/imgi.jpg'%}">
+        <img src="{% static 'img/imgü.jpg'%}">
+        <img src="{% static 'img/imgi.jpg'%}">
+        <img src="{% static 'img/img.jpg'%}">
+    </figure>
+</div>
+
+
+<div class="page3-wrapper">
+    <div class="post3-slider">
+        <h1 class="slider3-title">Çok Satan Ahşap Objeler</h1>
+
+        <i class="fa fa-chevron-left previous2"></i>
+        <i class="fa fa-chevron-right nexter2"></i>
+        <div class="post3-wrapper">
+            
+            {%for ahsap in object_list3%}
+            <div class="post3">
+                <a href="{{ ahsap.get_absolute_url }}"><img src="{{ahsap.thumbnail.url}}" class="slider-img"></a>
+                <div class="details">
+                    <p>GÖZ AT</p>
+                </div>
+                <div class="post-info">
+                    <h4><a href="{{ ahsap.get_absolute_url }}">{{ahsap.title}}</a></h4>
+                    <hr>
+                    <pre><p><del>{{ahsap.f_price}} ₺</del>     {{ahsap.l_price}} ₺</p></pre>
+
+                </div>
+
+            </div>
+            {% endfor %}
+            
+
+        </div>
+    </div>
+
+</div>
+
+<!--------------JS KODLARI------------->
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="{% static 'slick/slick.min.js' %}"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.post-wrapper').slick({
+            slidesToShow: 5,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            nextArrow: $('.next'),
+            prevArrow: $('.prev'),
+        });
+        $('.post2-wrapper').slick({
+            slidesToShow: 5,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            nextArrow: $('.nexter'),
+            prevArrow: $('.previous'),
+
+
+        });
+
+        $('.post3-wrapper').slick({
+            slidesToShow: 5,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            nextArrow: $('.nexter2'),
+            prevArrow: $('.previous2'),
+
+
+        });
+
+    });
+
+</script>
+
+
+
+
+
+<div class="page-wrapper">
+    <div class="post-slider">
+        <h1 class="slider-title">Çok Satan Boyalar</h1>
+
+        <i class="fa fa-chevron-left prev"></i>
+        <i class="fa fa-chevron-right next"></i>
+        <div class="post4-wrapper">
+            
+            {%for boya in object_list_boya%}
+            <div class="post">
+                <a href="{{ boya.get_absolute_url }}"><img src="{{boya.thumbnail.url}}" class="slider-img"></a>
+                <div class="details">
+                    <p>GÖZ AT</p>
+                </div>
+                <div class="post-info">
+                    <h4><a href="{{ boya.get_absolute_url }}">{{boya.title}}</a></h4>
+                    <hr>
+                    <pre><p><del>{{boya.f_price}} ₺</del>     {{boya.l_price}} ₺</p></pre>
+
+                </div>
+
+            </div>
+            {% endfor %}
+            
+
+        </div>
+    </div>
+
+</div>
+
+
+
+
+{% endblock content %}

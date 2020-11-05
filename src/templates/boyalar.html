@@ -1,0 +1,51 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+<script src="{% static 'js/app.js' %}"></script>
+       <div class="vl"></div>
+        <!--<div id="slider">-->
+            <main class="posts-listing col-lg-8">
+            <div class="container "> 
+            
+            {% for post in boya_objeler %}    
+             <div class="box"> 
+                 <div class="imgBox">
+                  <a href="{{ post.get_absolute_url }}"><img src="{{post.thumbnail.url}}"></a> 
+                 </div> 
+                 <div class="details">
+                    <div class="content">
+                    <h2>GÖZ AT</h2>
+                    <!--<p>{{post.overview}} </p>-->
+                    </div>
+                 </div>
+                 <div class="price">
+                  <h3><a href="{{ post.get_absolute_url }}">{{post.title}}</a></h3>
+                     <hr>
+                    <pre> <p><del>{{post.f_price}} ₺</del>    {{post.l_price}} ₺</p></pre>
+                     
+                 </div>   
+             </div> 
+             {% endfor %}
+
+        <nav aria-label="Page navigation example">
+            <ul class="pagination pagination-template d-flex justify-content-center">
+              {% if boya_objeler.has_previous %}
+              <li class="page-item"><a href="?{{ page_request_var }}={{ boya_objeler.previous_page_number }}"
+                  class="page-link"> <i class="fa fa-angle-left"></i></a></li>
+              {% endif %}
+              <li class="page-item"><a href="?{{ page_request_var }}={{ boya_objeler.number }}"
+                  class="page-link active">{{ boya_objeler.number}}</a></li>
+  
+              {% if boya_objeler.has_next %}
+              <li class="page-item"><a href="?{{ page_request_var }}={{ boya_objeler.next_page_number }}" class="page-link">
+                  <i class="fa fa-angle-right"></i></a></li>
+              {% endif %}
+            </ul>
+          </nav>
+        </div>
+      </main>
+
+
+       
+
+{% endblock content %}
